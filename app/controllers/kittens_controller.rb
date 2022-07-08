@@ -18,6 +18,7 @@ class KittensController < ApplicationController
 
   def show
     @kitten = Kitten.find(params[:id])
+  end
 
   def edit
     @kitten = Kitten.find(params[:id])
