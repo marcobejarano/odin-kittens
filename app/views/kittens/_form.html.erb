@@ -1,8 +1,21 @@
 <%= form_with model: kitten do |form| %>
+  <% if kitten.errors.any? %>
+    <div class="error">
+      <h2><%= pluralize(kitten.errors.count, "error") %> prohibited this kitten from being saved</h2>
+      <ul>
+        <% kitten.errors.each do |error| %>
+          <li>
+            <%= error.full_message %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
   <%= form.label "Name:" %>
   <%= form.text_field :name, placeholder: "Name" %><br><br>
   <%= form.label "Age:" %>
-  <%= form.number_field :age, placeholder: "5" %><br><br>
+  <%= form.number_field :age, placeholder: 5 %><br><br>
   <%= form.label "Cuteness:" %>
   <%= form.text_field :cuteness, placeholder: "Very cute" %><br><br>
   <%= form.label "Softness:" %>

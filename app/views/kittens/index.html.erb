@@ -1,12 +1,14 @@
+<%= render "flash" %>
+
 <h1>List of Kittens</h1>
 
-<% @kittens.each do |kitten| %>
-  <ol>
+<ol>
+  <% @kittens.each do |kitten| %>
     <li>
       <%= link_to kitten.name, kitten %>
     </li>
-  </ol>
-<% end %>
+  <% end %>
+</ol>
 
 <br>
 
